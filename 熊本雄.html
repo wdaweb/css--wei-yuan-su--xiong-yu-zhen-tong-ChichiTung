@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊本熊</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            /* 水平置中 */
+            justify-content: center;
+            /* 垂直置中 */
+            align-items: center;
+            
+        }
+
+        .bear {
+            width: 500px;
+            height: 500px;
+            background: black;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            top: 250px;
+        }
+
+        .bear::before {
+            content: "";
+            width: 120px;
+            height: 120px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            bottom: 0;
+            left: -19px;
+            transform: translateY(-50%);
+        }
+
+        .bear::after {
+            content: "";
+            width: 120px;
+            height: 120px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            bottom: 0;
+            left: 400px;
+            transform: translateY(-50%);
+        }
+
+        .ear {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 13px rgb(0, 0, 0) solid;
+            border-radius: 50%;
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 50px;
+            /* 避免父元素設置 flex時 子元素相互擠壓 ===>   flex-shrink 設置為 0，則代表空間不足時不壓縮。 */
+            flex-shrink: 0;
+        }
+
+        .ear::after {
+            content: "";
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 13px rgba(0, 0, 0, 2) solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 320px;
+        }
+
+        .eye {
+            width: 100px;
+            height: 100px;
+            background: rgb(0, 0, 0);
+            border: 18px rgb(255, 255, 255) solid;
+            border-radius: 50%;
+            position: relative;
+            top: 100px;
+            right: 0;
+            bottom: 0;
+            left: 10px;
+            flex-shrink: 0;
+
+        }
+
+        .eye::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background: rgb(0, 0, 0);
+            border: 18px rgb(255, 255, 255) solid;
+            border-radius: 50%;
+            position: absolute;
+            top: -17px;
+            right: 0;
+            bottom: 0;
+            left: 205px;
+        }
+
+        .nose_mouth {
+            width: 200px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            top: 190px;
+            right: 0;
+            bottom: 0;
+            left: -32px;
+            flex-shrink: 0;
+        } 
+
+        .nose_mouth::after {
+            content: "";
+            width: 50px;
+            height: 33px;
+            background: rgb(1, 1, 1);
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            bottom: 0;
+            left: 74px;
+        } 
+        .nose_mouth::before {
+            content: "";
+            width: 117px;
+            height: 50px;
+            background: rgb(1, 1, 1);
+            border-radius: 50%;
+            position: absolute;
+            top: 64px;
+            right: 0;
+            bottom: 0;
+            left: 44px;
+        } 
+        .v-mark {
+            width: 250px;
+            height: 0;
+            /* background-color: white; */
+            border-top: 100px solid white;
+            border-right: 80px solid transparent;
+            border-left: 80px solid transparent;
+            position: relative;
+            /* z-index: ; */
+            top: 350px;
+            right: 0;
+            bottom: 0;
+            left: -255px;
+            flex-shrink: 0;
+           /* z-index: 3; */
+        }
+        .v-mark::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 64px 50px 0 50px;
+            border-color: #000000 transparent transparent transparent;
+            position: absolute;
+            /* z-index: ; */
+            top: -100px;
+            right: 0;
+            bottom: 0;
+            left: -5px;
+           /* z-index: 3; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="bear " class="bear">
+        <div class="ear"></div>
+        <div class="eye"></div>
+        <div class="nose_mouth"></div>
+        <div class="v-mark"></div>
+    </div>
+
+</body>
+
+</html>

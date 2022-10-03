@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syringe</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 1200px;
+      height: 300px;
+      position: relative;
+      top: calc(50vh - 150px);
+      margin: auto;
+    }
+
+    .push-part {
+      width: 60px;
+      height: 150px;
+      border: 1px solid #797979;
+      border-radius: 10px;
+      background-image: linear-gradient(rgb(255 255 255), rgb(219 219 219) 65%, rgb(255 255 255));
+      position: absolute;
+      top: calc(50% - 75px);
+      left: 10%;
+    }
+
+    .push-part::before {
+      content: "";
+      width: 80px;
+      height: 100px;
+      border: 1px solid #797979;
+      background-image: linear-gradient(rgb(255 255 255), rgb(219, 219, 219) 73%, rgb(255 255 255));
+
+      position: absolute;
+      top: calc(50% - 50px);
+      left: 100%;
+      right: 0;
+      bottom: 0;
+    }
+
+    .middle {
+      width: 300px;
+      height: 150px;
+      border: 1px solid #797979;
+      background-image: linear-gradient(rgb(255 255 255), rgb(219 219 219) 65%, rgb(255 255 255));
+
+      position: absolute;
+      top: calc(50% - 75px);
+      left: 21.5%;
+      /* transform: translateX(-50%); */
+    }
+
+    .middle::before {
+      content: "";
+      width: 300px;
+      height: 150px;
+      border: 1px solid #797979;
+      background-image: linear-gradient(rgb(255, 251, 184), rgb(208 208 139) 65%, rgb(255, 251, 184));
+
+      position: absolute;
+      top: calc(50% - 75px);
+      bottom: 0;
+      left: 119%;
+      right: 0;
+      /* transform: translateY(-50%); */
+    }
+
+    .middle::after {
+      content: "";
+      width: 80px;
+      height: 100px;
+      border: 1px solid #797979;
+      background-image: linear-gradient(rgb(255 255 255), rgb(219, 219, 219) 73%, rgb(255 255 255));
+      border-left: none;
+      position: absolute;
+      top: calc(50% - 50px);
+      left: 220%;
+      right: 0;
+      bottom: 0;
+    }
+
+    .needle {
+      width: 160px;
+      height: 2px;
+      border: 1px solid #797979;
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 992px;
+    }
+
+    .mark {
+      width: 660px;
+      height: 20px;
+      background-image: repeating-linear-gradient(90deg, #797979 0, #797979 1px, transparent 0, transparent 22px);
+
+      position: absolute;
+      top: calc(25%);
+      left: 272px;
+      right: 0;
+      bottom: 0;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .mark::after {
+      content: "";
+
+      width: 60px;
+      height: 150px;
+      border: 1px solid #000000;
+      background: #000000;
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 285px;
+      bottom: 0;
+      right: 0;
+    }
+
+    .mark::before {
+      content: "Made in Taiwan";
+
+      font-size: 20px;
+      color: #797979;
+      position: absolute;
+      top: 118px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="push-part"></div>
+    <div class="middle"></div>
+    <div class="needle"></div>
+    <div class="mark"></div>
+  </div>
+
+</body>
+
+</html>
